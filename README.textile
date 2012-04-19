@@ -39,6 +39,7 @@ h2. Be More Elite, A How To
 * Understand your system
 ** Explore /proc
 ** Explore /etc exhaustively
+** ls -ald ~/.*
 ** lsof
 ** ps axf
 ** netstat -tpln
