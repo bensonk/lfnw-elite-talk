@@ -538,7 +538,11 @@ Understand your system
    * Shut off any services you don't use
    * Find out you actually *do* use that service
    * Turn it back on!
+ * Explore /dev
+   * /dev/disk/by-\*
+   * /dev/input/by-\*
  * Explore your dotfiles extensively: `ls -ald ~/.*`
+ * Explore your kernel logs with `dmesg` (or `watch bash -c 'dmesg | tail -n 30'`)
  * Install and play with `lsof`
  * Play with `ps axf` (read the ps man page for details)
  * Look at `sudo netstat -tpln` output (and look at netstat's man page)
