@@ -424,8 +424,8 @@ Create `~/bin` and put it in your path.  Put useful scripts there.
 
 The `*` glob just creates a space-separated list of all the files in your current directory.  Experiment with "echo \*" to see what I mean.
 
-If you do something a lot, automate it!
-=======================================
+The second time you do a thing, automate it
+===========================================
 
  * Shell scripts are easy: just type a bunch of commands into a file. 
  * Python is pretty easy to learn, too.  If you've done any programming, you can probably learn python.
