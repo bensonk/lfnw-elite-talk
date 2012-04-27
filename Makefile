@@ -1,2 +1,2 @@
 test:
-	linen README.textile | bcat
+	cat README.md slides.md | markdown | bcat

@@ -29,7 +29,7 @@ Be More Elite, A How To
     * Emacs (First this time!)
     * Or Vim
     * Use your history (search and replace)
-    * Learn what * *really* means
+    * Learn what \* *really* means
   * If do something a lot, automate it!
     * Bash scripting
       * Pipes are your friend
@@ -71,3 +71,5 @@ Be More Elite, A How To
    * Scapy
    * On Being a Script Kiddie
    * So Long, and thanks for all the fish
+
+
