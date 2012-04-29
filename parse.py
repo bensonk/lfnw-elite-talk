@@ -1,6 +1,6 @@
 #!/usr/bin/python
+from json import dumps
 from pprint import pprint
-from pymongo import Connection
 
 def is_headline(line):
   line = line.strip()
@@ -23,21 +23,20 @@ def parse_file(fname):
     slides.append( { "title": lines[i], "body": "".join(lines[i+2:j]) } )
   return slides
 
-def insert_slides(slides, show, url):
-  db = Connection(url).meteor
+def insert_slides(slides, show):
   for i, slide in enumerate(slides):
     slide["show_id"] = show
     slide["current"] = False
     slide['order'] = i
-    db.slides.insert(slide)
+    print "db.slides.insert({})".format(dumps(slide))
 
-def handle_file(fname, show, url):
+def handle_file(fname, show):
   slides = parse_file(fname)
-  insert_slides(slides, show, url)
+  insert_slides(slides, show)
 
 if __name__ == "__main__":
   from sys import argv
-  if len(argv) != 4:
-    print "Usage: ./parse.py <filename> <slideshow_id> <mongo_url>"
+  if len(argv) != 3:
+    print "Usage: ./parse.py <filename> <slideshow_id>"
   else:
-    handle_file(argv[1], argv[2], argv[3])
+    handle_file(argv[1], argv[2])
