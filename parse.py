@@ -23,21 +23,21 @@ def parse_file(fname):
     slides.append( { "title": lines[i], "body": "".join(lines[i+2:j]) } )
   return slides
 
-def insert_slides(slides, show):
-  db = Connection("mongodb://127.0.0.1:3002/meteor").meteor
+def insert_slides(slides, show, url):
+  db = Connection(url).meteor
   for i, slide in enumerate(slides):
     slide["show_id"] = show
     slide["current"] = False
     slide['order'] = i
     db.slides.insert(slide)
 
-def handle_file(fname, show):
+def handle_file(fname, show, url):
   slides = parse_file(fname)
-  insert_slides(slides, show)
+  insert_slides(slides, show, url)
 
 if __name__ == "__main__":
   from sys import argv
-  if len(argv) != 3:
-    print "Usage: ./parse.py <filename> <slideshow_id>"
+  if len(argv) != 4:
+    print "Usage: ./parse.py <filename> <slideshow_id> <mongo_url>"
   else:
-    handle_file(argv[1], argv[2])
+    handle_file(argv[1], argv[2], argv[3])
